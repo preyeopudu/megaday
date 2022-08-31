@@ -1,4 +1,5 @@
 import { ScaledSheet } from "react-native-size-matters";
+import { StatusBar } from "react-native";
 
 const styles = ScaledSheet.create({
   container: {

@@ -3,6 +3,7 @@ import * as Splashscreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import { useEffect, useState, useCallback } from "react";
 import { View } from "react-native";
+import SplashScreen from "./src/screens/splashscreen";
 
 const getFonts = () => {
   Font.loadAsync({
@@ -45,7 +46,7 @@ const App = () => {
   onLayoutRootView();
 
   if (!isReady) {
-    return <View style={{ flex: 1, backgroundColor: "#fff" }}></View>;
+    return <SplashScreen />;
   }
 };
 export default App;
