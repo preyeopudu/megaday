@@ -1,20 +1,51 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from "react-redux";
+import * as Splashscreen from "expo-splash-screen";
+import * as Font from "expo-font";
+import { useEffect, useState, useCallback } from "react";
+import { View } from "react-native";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const getFonts = () => {
+  Font.loadAsync({
+    circular: require("./assets/fonts/circular.ttf"),
+    regular: require("./assets/fonts/regular.ttf"),
+    bold: require("./assets/fonts/bold.ttf"),
+    circularbold: require("./assets/fonts/circularbold.ttf"),
+    circularmedium: require("./assets/fonts/circularmedium.ttf"),
+    medium: require("./assets/fonts/medium.ttf"),
+  });
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+const App = () => {
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    const loadFonts = async () => {
+      try {
+        await Font.loadAsync({
+          circular: require("./assets/fonts/circular.ttf"),
+          regular: require("./assets/fonts/regular.ttf"),
+          bold: require("./assets/fonts/bold.ttf"),
+          circularbold: require("./assets/fonts/circularbold.ttf"),
+          circularmedium: require("./assets/fonts/circularmedium.ttf"),
+          medium: require("./assets/fonts/medium.ttf"),
+        });
+      } catch (error) {
+      } finally {
+        setIsReady(true);
+      }
+    };
+  });
+
+  const onLayoutRootView = useCallback(async () => {
+    if (isReady) {
+      await Splashscreen.hideAsync();
+    }
+  }, [isReady]);
+
+  onLayoutRootView();
+
+  if (!isReady) {
+    return <View style={{ flex: 1, backgroundColor: "#fff" }}></View>;
+  }
+};
+export default App;
