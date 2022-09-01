@@ -4,6 +4,7 @@ import * as Font from "expo-font";
 import { useEffect, useState, useCallback } from "react";
 import { View } from "react-native";
 import SplashScreen from "./src/screens/splashscreen";
+import IndexStack from "./src/stacks";
 
 const getFonts = () => {
   Font.loadAsync({
@@ -18,6 +19,7 @@ const getFonts = () => {
 
 const App = () => {
   const [isReady, setIsReady] = useState(false);
+  const [splash, setSplash] = useState(false);
 
   useEffect(() => {
     const loadFonts = async () => {
@@ -31,10 +33,16 @@ const App = () => {
           medium: require("./assets/fonts/medium.ttf"),
         });
       } catch (error) {
+        console.error(error);
       } finally {
-        setIsReady(true);
+        setSplash(true);
+        setTimeout(() => {
+          setSplash(false);
+          setIsReady(true);
+        }, 5000);
       }
     };
+    loadFonts();
   });
 
   const onLayoutRootView = useCallback(async () => {
@@ -45,8 +53,10 @@ const App = () => {
 
   onLayoutRootView();
 
-  if (!isReady) {
+  if (isReady == false && splash == true) {
     return <SplashScreen />;
+  } else if (isReady == true) {
+    return <IndexStack />;
   }
 };
 export default App;
