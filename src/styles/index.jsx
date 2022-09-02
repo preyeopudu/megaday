@@ -5,7 +5,10 @@ const styles = ScaledSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
+  },
+  scrollContainer: {
+    flex: 1,
+    backgroundColor: "#fff",
   },
 });
 

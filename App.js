@@ -36,14 +36,16 @@ const App = () => {
         console.error(error);
       } finally {
         setSplash(true);
-        setTimeout(() => {
+        const t = setTimeout(() => {
           setSplash(false);
           setIsReady(true);
         }, 5000);
+
+        return () => clearTimeout(t);
       }
     };
     loadFonts();
-  });
+  }, []);
 
   const onLayoutRootView = useCallback(async () => {
     if (isReady) {
