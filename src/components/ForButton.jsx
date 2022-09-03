@@ -23,7 +23,7 @@ const FormButton = ({ title, outlined, onPress, style }) => {
         style={{
           fontFamily: "circular",
           color: outlined ? "#BB00DA" : "#fff",
-          fontSize: scale(19),
+          fontSize: 17,
           letterSpacing: 1,
         }}
       >

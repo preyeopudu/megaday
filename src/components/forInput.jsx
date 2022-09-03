@@ -3,11 +3,11 @@ import { scale } from "react-native-size-matters";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 
-const FormInput = ({ label, onChangeText, isSecure }) => {
+const FormInput = ({ label, onChangeText, isSecure, style }) => {
   const [isActive, SetIsActive] = useState(false);
   const [show, setShow] = useState(false);
   return (
-    <View style={{}}>
+    <View style={style}>
       <Text
         style={{
           fontSize: scale(15),

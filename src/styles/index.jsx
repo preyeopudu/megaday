@@ -9,6 +9,8 @@ const styles = ScaledSheet.create({
   scrollContainer: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingHorizontal: "30@s",
+    paddingTop: StatusBar.currentHeight,
   },
 });
 
