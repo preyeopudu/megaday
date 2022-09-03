@@ -8,10 +8,11 @@ const FormButton = ({ title, outlined, onPress, style }) => {
       activeOpacity={0.7}
       onPress={onPress}
       style={{
+        paddingVertical: 10,
         borderColor: "#BB00DA",
         borderWidth: 3,
-        width: width * 0.8,
-        height: 50,
+        width: "100%",
+        height: 54,
         alignItems: "center",
         justifyContent: "center",
         backgroundColor: outlined ? "#fff" : "#BB00DA",
@@ -22,7 +23,8 @@ const FormButton = ({ title, outlined, onPress, style }) => {
         style={{
           fontFamily: "circular",
           color: outlined ? "#BB00DA" : "#fff",
-          fontSize: scale(16),
+          fontSize: scale(19),
+          letterSpacing: 1,
         }}
       >
         {title}
