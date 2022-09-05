@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { View, Text, ScrollView } from "react-native";
 import { scale, verticalScale } from "react-native-size-matters";
 import FormButton from "../../components/ForButton";
@@ -6,6 +7,7 @@ import { primary, secondary } from "../../constants/color";
 import styles from "../../styles";
 
 const ForgotScreen = () => {
+  const { navigate } = useNavigation();
   return (
     <ScrollView style={styles.scrollContainer}>
       <Text
@@ -30,7 +32,7 @@ const ForgotScreen = () => {
       </Text>
 
       <FormInput label="Email" style={{ marginVertical: scale(50) }} />
-      <FormButton title="Reset" />
+      <FormButton title="Reset" onPress={() => navigate("Mail")} />
     </ScrollView>
   );
 };
