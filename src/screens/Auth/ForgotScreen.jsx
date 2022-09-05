@@ -1,15 +1,37 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
+import { scale, verticalScale } from "react-native-size-matters";
+import FormButton from "../../components/ForButton";
+import FormInput from "../../components/forInput";
+import { primary, secondary } from "../../constants/color";
 import styles from "../../styles";
 
 const ForgotScreen = () => {
   return (
-    <View style={styles.container}>
-      <Text>Forgot Password</Text>
-      <Text>
+    <ScrollView style={styles.scrollContainer}>
+      <Text
+        style={{
+          fontFamily: "circularbold",
+          marginTop: verticalScale(25),
+          fontSize: scale(20),
+        }}
+      >
+        Forgot Password?
+      </Text>
+      <Text
+        style={{
+          fontFamily: "circular",
+          color: primary,
+          fontSize: scale(14),
+          marginTop: 10,
+        }}
+      >
         Enter the email address associated with your account and we'll send a
         password reset link there.
       </Text>
-    </View>
+
+      <FormInput label="Email" style={{ marginVertical: scale(50) }} />
+      <FormButton title="Reset" />
+    </ScrollView>
   );
 };
 
