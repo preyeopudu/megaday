@@ -2,12 +2,13 @@ import { View, TextInput, Text, TouchableOpacity } from "react-native";
 import { scale } from "react-native-size-matters";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
+import { primary, secondary } from "../constants/color";
 
 const FormInput = ({ label, onChangeText, isSecure, style }) => {
   const [isActive, SetIsActive] = useState(false);
   const [show, setShow] = useState(false);
   return (
-    <View style={style}>
+    <View style={[style]}>
       <Text
         style={{
           fontSize: scale(15),
@@ -26,6 +27,7 @@ const FormInput = ({ label, onChangeText, isSecure, style }) => {
           justifyContent: "space-between",
           alignItems: "center",
           paddingHorizontal: 0,
+          paddingLeft: 20,
         }}
       >
         <TextInput
@@ -45,9 +47,9 @@ const FormInput = ({ label, onChangeText, isSecure, style }) => {
             onPress={() => setShow(!show)}
           >
             {show == false ? (
-              <Feather name="eye" size={20} color="black" />
+              <Feather name="eye" size={20} color={primary} />
             ) : (
-              <Feather name="eye-off" size={20} color="black" />
+              <Feather name="eye-off" size={20} color={primary} />
             )}
           </TouchableOpacity>
         ) : (

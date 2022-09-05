@@ -5,12 +5,13 @@ const styles = ScaledSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    marginTop: StatusBar.currentHeight,
   },
   scrollContainer: {
     flex: 1,
     backgroundColor: "#fff",
     paddingHorizontal: "30@s",
-    paddingTop: StatusBar.currentHeight,
+    marginTop: StatusBar.currentHeight,
   },
 });
 

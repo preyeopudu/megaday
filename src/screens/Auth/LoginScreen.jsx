@@ -4,8 +4,10 @@ import FormButton from "../../components/ForButton";
 import FormInput from "../../components/forInput";
 import { primary, secondary } from "../../constants/color";
 import styles from "../../styles";
+import { useNavigation } from "@react-navigation/native";
 
 const LoginScreen = () => {
+  const { navigate } = useNavigation();
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -56,7 +58,7 @@ const LoginScreen = () => {
           <Text style={{ fontFamily: "circular", color: primary }}>
             Forgot password?
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigate("Forgot")}>
             <Text
               style={{
                 fontFamily: "circularmedium",
