@@ -5,15 +5,18 @@ import {
   BottomSheetModal,
   BottomSheetModalProvider,
 } from "@gorhom/bottom-sheet";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 const IndexStack = () => {
   return (
-    <BottomSheetModalProvider>
-      <NavigationContainer>
-        <AuthStack />
-        <StatusBar backgroundColor="#fff" />
-      </NavigationContainer>
-    </BottomSheetModalProvider>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <BottomSheetModalProvider>
+        <NavigationContainer>
+          <AuthStack />
+          <StatusBar backgroundColor="#fff" />
+        </NavigationContainer>
+      </BottomSheetModalProvider>
+    </GestureHandlerRootView>
   );
 };
 

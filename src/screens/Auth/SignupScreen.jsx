@@ -7,10 +7,19 @@ import PhoneInput from "../../components/PhoneInput";
 import { primary, secondary } from "../../constants/color";
 import styles from "../../styles";
 import { ScrollView } from "react-native-virtualized-view";
-import CodePicker from "../../components/CodePicker";
+import { useRef, useMemo, useCallback } from "react";
+import { BottomSheetModal, BottomSheetScrollView } from "@gorhom/bottom-sheet";
+import CustomBackdrop from "../../components/Backdrop";
+import VendorList from "../../components/VendorList";
 
 const SignupScreen = () => {
   const { navigate } = useNavigation();
+  const bottomSheetModalRef = useRef(null);
+  const snapPoints = useMemo(() => ["75%", "95%"], []);
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
+
   return (
     <ScrollView style={styles.scrollContainer} nestedScrollEnabled={true}>
       <Text
@@ -38,6 +47,7 @@ const SignupScreen = () => {
       <FormButton
         title="Create account"
         style={{ marginTop: verticalScale(30) }}
+        onPress={handlePresentModalPress}
       />
       <View
         style={{
@@ -65,6 +75,39 @@ const SignupScreen = () => {
           </Text>
         </TouchableOpacity>
       </View>
+      <BottomSheetModal
+        backdropComponent={CustomBackdrop}
+        ref={bottomSheetModalRef}
+        index={1}
+        snapPoints={snapPoints}
+      >
+        <BottomSheetScrollView>
+          <View style={{ marginHorizontal: 30 }}>
+            <Text
+              style={{ fontFamily: "bold", fontSize: 24, textAlign: "center" }}
+            >
+              Vendor Category
+            </Text>
+            <Text
+              style={{
+                fontFamily: "bold",
+                fontSize: 14,
+                textAlign: "center",
+                color: primary,
+                marginHorizontal: scale(30),
+                marginVertical: 5,
+                marginBottom: 10,
+              }}
+            >
+              Please, choose one of the following category for your product
+            </Text>
+
+            <VendorList />
+
+            <FormButton title="Continue" style={{ marginVertical: 15 }} />
+          </View>
+        </BottomSheetScrollView>
+      </BottomSheetModal>
     </ScrollView>
   );
 };
