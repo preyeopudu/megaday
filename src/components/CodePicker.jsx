@@ -13,7 +13,7 @@ const CodePicker = ({ isVisible, setIsvisible, setCode }) => {
           style={{
             fontFamily: "circular",
             letterSpacing: 1,
-            fontSize: 18,
+            fontSize: 16,
             marginVertical: 10,
             marginHorizontal: 20,
           }}
@@ -27,6 +27,22 @@ const CodePicker = ({ isVisible, setIsvisible, setCode }) => {
     <View style={{ flex: 1 }}>
       <Modal visible={isVisible} animationType="slide">
         <View>
+          <View>
+            <TouchableOpacity
+              onPress={() => setIsvisible(false)}
+              style={{ alignSelf: "flex-end", marginHorizontal: 20 }}
+            >
+              <Text
+                style={{
+                  fontFamily: "circularbold",
+                  letterSpacing: 1,
+                  fontSize: 18,
+                }}
+              >
+                Close
+              </Text>
+            </TouchableOpacity>
+          </View>
           <FlatList
             data={code}
             renderItem={({ item }) => <CodeItem item={item} />}
