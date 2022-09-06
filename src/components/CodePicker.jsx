@@ -44,6 +44,7 @@ const CodePicker = ({ isVisible, setIsvisible, setCode }) => {
             </TouchableOpacity>
           </View>
           <FlatList
+            showsVerticalScrollIndicator={false}
             data={code}
             renderItem={({ item }) => <CodeItem item={item} />}
           />
