@@ -1,18 +1,18 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
 import AuthStack from "./authstack";
-import {
-  BottomSheetModal,
-  BottomSheetModalProvider,
-} from "@gorhom/bottom-sheet";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { useSelector } from "react-redux";
+import MainStack from "./mainstack";
 
 const IndexStack = () => {
+  const { Auth } = useSelector((state) => state);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <BottomSheetModalProvider>
         <NavigationContainer>
-          <AuthStack />
+          {Auth == false ? <AuthStack /> : <MainStack />}
           <StatusBar backgroundColor="#fff" />
         </NavigationContainer>
       </BottomSheetModalProvider>

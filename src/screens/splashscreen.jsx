@@ -42,11 +42,12 @@ const SplashScreen = () => {
         >
           Buy and Sell on Megaday
         </Text>
-
-        <AutoHeightImage
-          width={width * 0.96}
-          source={require("../../assets/images/splashman.png")}
-        />
+        <View style={{ alignSelf: "center" }}>
+          <AutoHeightImage
+            width={width * 0.96}
+            source={require("../../assets/images/splashman.png")}
+          />
+        </View>
       </View>
     </View>
   );

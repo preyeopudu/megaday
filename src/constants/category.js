@@ -32,4 +32,25 @@ export const category = [
   {
     title: "Hair products,Health and Beauty",
   },
+  {
+    title: "Home",
+  },
+  {
+    title: "Industrial and Construction",
+  },
+  {
+    title: "Medical",
+  },
+  {
+    title: "Mobile Phones",
+  },
+  {
+    title: "Music",
+  },
+  {
+    title: "Properties",
+  },
+  {
+    title: "Security and Surveillance",
+  },
 ];

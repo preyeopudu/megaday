@@ -1,9 +1,14 @@
-import { Provider } from "react-redux";
-import * as Splashscreen from "expo-splash-screen";
-import * as Font from "expo-font";
-import { useEffect, useState } from "react";
-import { View } from "react-native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import DashboardScreen from "../../screens/Dashboard/dashboardScreen";
 
-const App = () => {
-  return <View></View>;
+const Stack = createNativeStackNavigator();
+
+const MainStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Dashboard" component={DashboardScreen} />
+    </Stack.Navigator>
+  );
 };
+
+export default MainStack;

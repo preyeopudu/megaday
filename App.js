@@ -2,9 +2,11 @@ import { Provider } from "react-redux";
 import * as Splashscreen from "expo-splash-screen";
 import * as Font from "expo-font";
 import { useEffect, useState, useCallback } from "react";
-import { View } from "react-native";
+
 import SplashScreen from "./src/screens/splashscreen";
 import IndexStack from "./src/stacks";
+import { View } from "react-native";
+import store from "./src/store/reducers";
 
 const getFonts = () => {
   Font.loadAsync({
@@ -58,7 +60,13 @@ const App = () => {
   if (isReady == false && splash == true) {
     return <SplashScreen />;
   } else if (isReady == true) {
-    return <IndexStack />;
+    return (
+      <Provider store={store}>
+        <View style={{ flex: 1 }}>
+          <IndexStack />
+        </View>
+      </Provider>
+    );
   }
 };
 export default App;

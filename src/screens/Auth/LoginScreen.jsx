@@ -5,9 +5,16 @@ import FormInput from "../../components/forInput";
 import { primary, secondary } from "../../constants/color";
 import styles from "../../styles";
 import { useNavigation } from "@react-navigation/native";
+import { useDispatch } from "react-redux";
+import { Login } from "../../store/actions/Login";
 
 const LoginScreen = () => {
   const { navigate } = useNavigation();
+  const dispatch = useDispatch();
+
+  const HandleLogin = () => {
+    dispatch(Login());
+  };
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -45,7 +52,7 @@ const LoginScreen = () => {
       <View
         style={{ alignItems: "center", alignSelf: "center", width: "100%" }}
       >
-        <FormButton title="Login" />
+        <FormButton title="Login" onPress={HandleLogin} />
 
         <View
           style={{
