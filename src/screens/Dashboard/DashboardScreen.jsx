@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, Text, Image } from "react-native";
 import { ScrollView } from "react-native-virtualized-view";
 import styles from "../../styles";
 
