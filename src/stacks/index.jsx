@@ -13,9 +13,9 @@ const IndexStack = () => {
       <BottomSheetModalProvider>
         <NavigationContainer>
           {Auth == false ? <AuthStack /> : <MainStack />}
-          <StatusBar backgroundColor="#fff" />
         </NavigationContainer>
       </BottomSheetModalProvider>
+      <StatusBar backgroundColor="#fff" />
     </GestureHandlerRootView>
   );
 };

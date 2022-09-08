@@ -1,7 +1,6 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import DashboardScreen from "../../screens/Dashboard/DashboardScreen";
-import { Image, View, Text } from "react-native";
 import { secondary } from "../../constants/color";
 import FavouriteScreen from "../../screens/Dashboard/FavouriteScreen";
 import SalesScreen from "../../screens/Dashboard/SalesScreen";
@@ -14,9 +13,10 @@ const MainStack = () => {
   return (
     <Tab.Navigator
       barStyle={{ backgroundColor: "#fff", elevation: 0, height: 70 }}
-      // labeled={false}
       activeColor={secondary}
-      screenOptions={{ headerShown: false }}
+      screenOptions={{
+        headerShown: false,
+      }}
     >
       <Tab.Screen
         name="Home"
@@ -24,7 +24,7 @@ const MainStack = () => {
         options={{
           tabBarLabel: "Home",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={25} />
+            <Feather name="home" size={25} color={color} />
           ),
         }}
       />
