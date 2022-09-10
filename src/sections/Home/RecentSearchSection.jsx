@@ -1,5 +1,6 @@
 import { Text, TouchableOpacity, View } from "react-native";
 import { Fontisto } from "@expo/vector-icons";
+import { secondary } from "../../constants/color";
 
 const searches = [
   { name: "Shirts" },
@@ -35,6 +36,22 @@ const SearchComponent = ({ search }) => {
 const RecentSearch = () => {
   return (
     <View style={{ alignSelf: "center", width: "100%", marginVertical: 20 }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginVertical: 10,
+        }}
+      >
+        <Text style={{ fontFamily: "circular" }}>Recent search</Text>
+        <Text
+          style={{ fontFamily: "circularbold", color: secondary }}
+          onPress={() => alert(1)}
+        >
+          Clear
+        </Text>
+      </View>
       {searches.map((search) => (
         <SearchComponent search={search} key={search.name} />
       ))}
