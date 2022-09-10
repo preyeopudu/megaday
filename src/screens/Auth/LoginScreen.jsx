@@ -12,7 +12,7 @@ const LoginScreen = () => {
   const { navigate } = useNavigation();
   const dispatch = useDispatch();
 
-  const HandleLogin = () => {
+  const HandleLogin = async () => {
     dispatch(Login());
   };
   return (

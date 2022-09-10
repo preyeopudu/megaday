@@ -1,9 +1,11 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import AutoHeightImage from "react-native-auto-height-image";
 import { secondary } from "../../constants/color";
 import { scale } from "react-native-size-matters";
+import { useNavigation } from "@react-navigation/native";
 
 const TopSection = () => {
+  const { navigate } = useNavigation();
   return (
     <View
       style={{
@@ -21,14 +23,17 @@ const TopSection = () => {
         </Text>
       </View>
       <View style={{ flexDirection: "row", alignItems: "center" }}>
-        <TouchableOpacity style={{ marginHorizontal: 20 }}>
+        <TouchableOpacity
+          style={{ marginHorizontal: 20 }}
+          onPress={() => navigate("search")}
+        >
           <AutoHeightImage
             source={require("../../../assets/images/search.png")}
             width={scale(22)}
           />
         </TouchableOpacity>
 
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate("notification")}>
           <AutoHeightImage
             width={scale(22)}
             source={require("../../../assets/images/bell.png")}

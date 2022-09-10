@@ -11,6 +11,7 @@ import { useRef, useMemo, useCallback } from "react";
 import { BottomSheetModal, BottomSheetScrollView } from "@gorhom/bottom-sheet";
 import CustomBackdrop from "../../components/Backdrop";
 import VendorList from "../../components/VendorList";
+import CategorySection from "../../sections/Auth/CategorySection";
 
 const SignupScreen = () => {
   const { navigate } = useNavigation();
@@ -82,30 +83,7 @@ const SignupScreen = () => {
         snapPoints={snapPoints}
       >
         <BottomSheetScrollView>
-          <View style={{ marginHorizontal: 30 }}>
-            <Text
-              style={{ fontFamily: "bold", fontSize: 24, textAlign: "center" }}
-            >
-              Vendor Category
-            </Text>
-            <Text
-              style={{
-                fontFamily: "bold",
-                fontSize: 14,
-                textAlign: "center",
-                color: primary,
-                marginHorizontal: scale(30),
-                marginVertical: 5,
-                marginBottom: 10,
-              }}
-            >
-              Please, choose one of the following category for your product
-            </Text>
-
-            <VendorList />
-
-            <FormButton title="Continue" style={{ marginVertical: 15 }} />
-          </View>
+          <CategorySection />
         </BottomSheetScrollView>
       </BottomSheetModal>
     </ScrollView>
