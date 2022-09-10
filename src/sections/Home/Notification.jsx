@@ -24,7 +24,7 @@ const NotificationComponent = ({ item }) => {
       style={{
         flexDirection: "row",
         alignItems: "center",
-        marginVertical: 8,
+        marginVertical: 10,
       }}
     >
       <Image
@@ -37,11 +37,18 @@ const NotificationComponent = ({ item }) => {
             fontFamily: "circularmedium",
             color: secondary,
             marginBottom: 2,
+            fontSize: 13,
           }}
         >
           {item.title}
         </Text>
-        <Text style={{ color: primary, fontFamily: "circularmedium" }}>
+        <Text
+          style={{
+            color: primary,
+            fontFamily: "circularmedium",
+            fontSize: 12,
+          }}
+        >
           {item.message}
         </Text>
       </View>
@@ -57,7 +64,8 @@ const NotificationSection = () => {
           fontFamily: "circularmedium",
           textAlign: "right",
           color: secondary,
-          marginVertical: 10,
+          marginBottom: 10,
+          fontSize: 12,
         }}
       >
         Clear

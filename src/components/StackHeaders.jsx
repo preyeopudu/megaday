@@ -2,7 +2,7 @@ import { TouchableOpacity, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import { primary } from "../constants/color";
-const StackHeaders = () => {
+const StackHeaders = ({ title }) => {
   const { goBack } = useNavigation();
   return (
     <View
@@ -13,7 +13,7 @@ const StackHeaders = () => {
         marginVertical: 10,
         borderBottomColor: "#D9D9D9",
         borderBottomWidth: 1.5,
-        paddingBottom: 15,
+        paddingBottom: 10,
       }}
     >
       <View style={{ flex: 1 }}>
@@ -25,11 +25,11 @@ const StackHeaders = () => {
         <Text
           style={{
             textAlign: "center",
-            fontFamily: "circular",
+            fontFamily: "circularmedium",
             fontSize: 20,
           }}
         >
-          Notifications
+          {title}
         </Text>
       </View>
       <View style={{ flex: 1 }}></View>

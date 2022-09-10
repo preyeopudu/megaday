@@ -1,11 +1,9 @@
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import DashboardScreen from "../../screens/Bottom/DashboardScreen";
 import { secondary } from "../../constants/color";
 import FavouriteScreen from "../../screens/Bottom/FavouriteScreen";
 import SalesScreen from "../../screens/Bottom/SalesScreen";
 import MessagesScreen from "../../screens/Bottom/MessagesScreen";
-import { FontAwesome5, Feather, Ionicons } from "@expo/vector-icons";
+import { FontAwesome5, Feather, Ionicons, Octicons } from "@expo/vector-icons";
 import MainStack from "./index";
 
 const Tab = createMaterialBottomTabNavigator();
@@ -36,7 +34,7 @@ const BottomStack = () => {
         options={{
           tabBarLabel: "Favourites",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="star" color={color} size={25} />
+            <Octicons name="star" color={color} size={25} />
           ),
         }}
       />

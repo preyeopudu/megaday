@@ -7,7 +7,7 @@ import StackHeaders from "../../components/StackHeaders";
 const NotificationScreen = () => {
   return (
     <View style={[styles.scrollContainer, { backgroundColor: "#F6F6F6" }]}>
-      <StackHeaders />
+      <StackHeaders title={"Notifications"} />
       <NotificationSection />
     </View>
   );
