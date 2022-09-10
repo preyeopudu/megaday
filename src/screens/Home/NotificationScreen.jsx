@@ -1,8 +1,16 @@
-import { ScrollView } from "react-native";
+import { Image, ScrollView, Text, View, TouchableOpacity } from "react-native";
+import NotificationSection from "../../sections/Home/Notification";
 import styles from "../../styles";
+import { Ionicons } from "@expo/vector-icons";
+import StackHeaders from "../../components/StackHeaders";
 
 const NotificationScreen = () => {
-  return <ScrollView style={styles.scrollContainer}></ScrollView>;
+  return (
+    <View style={[styles.scrollContainer, { backgroundColor: "#F6F6F6" }]}>
+      <StackHeaders />
+      <NotificationSection />
+    </View>
+  );
 };
 
 export default NotificationScreen;

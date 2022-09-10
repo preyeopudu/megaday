@@ -55,7 +55,7 @@ const SignupScreen = () => {
           flexDirection: "row",
           alignSelf: "center",
           marginTop: scale(10),
-          paddingBottom: 40,
+          paddingBottom: 140,
         }}
       >
         <Text style={{ fontFamily: "circularmedium" }}>

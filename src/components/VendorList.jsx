@@ -37,10 +37,6 @@ const VendorList = () => {
       {category.map((item) => (
         <Category item={item} key={item.title} />
       ))}
-      {/* <FlatList
-        data={category}
-        renderItem={({ item }) => <Text>{item.title}</Text>}
-      /> */}
     </View>
   );
 };

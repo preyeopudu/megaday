@@ -18,7 +18,7 @@ const SearchScreen = () => {
           flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 10,
+          marginTop: 20,
         }}
       >
         <TouchableOpacity style={{ marginRight: 10 }} onPress={goBack}>
