@@ -72,11 +72,21 @@ const MessagesScreen = () => {
         },
       ]}
     >
-      <Text>Messages</Text>
-      <View>
+      <Text style={{ fontFamily: "bold", fontSize: 16, marginVertical: 15 }}>
+        Messages
+      </Text>
+      <View style={{}}>
         <ScrollView
-          style={{ backgroundColor: "#fff", paddingBottom: 50, paddingTop: 20 }}
+          showsVerticalScrollIndicator={false}
+          style={{
+            backgroundColor: "#fff",
+            paddingBottom: 100,
+            paddingTop: 20,
+          }}
         >
+          <Message />
+          <Message />
+          <Message />
           <Message />
         </ScrollView>
       </View>
