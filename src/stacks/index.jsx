@@ -4,8 +4,8 @@ import AuthStack from "./authstack";
 import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useSelector } from "react-redux";
-import MainStack from "./mainstack";
 import BottomStack from "./mainstack/bottomstack";
+import BottomlessStack from "./mainstack/lessStack";
 
 const IndexStack = () => {
   const { Auth } = useSelector((state) => state);
@@ -13,7 +13,7 @@ const IndexStack = () => {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <BottomSheetModalProvider>
         <NavigationContainer>
-          {Auth == false ? <AuthStack /> : <BottomStack />}
+          {Auth == false ? <AuthStack /> : <BottomlessStack />}
         </NavigationContainer>
       </BottomSheetModalProvider>
     </GestureHandlerRootView>

@@ -58,7 +58,7 @@ const NotificationComponent = ({ item }) => {
 
 const NotificationSection = () => {
   return (
-    <View style={{ height: "50%" }}>
+    <View style={{ height: "50%", alignSelf: "center", width: "100%" }}>
       <Text
         style={{
           fontFamily: "circularmedium",
