@@ -1,10 +1,14 @@
-import { Text, Image, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { Text, Image, View, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-virtualized-view";
 import { secondary } from "../../constants/color";
 import styles from "../../styles";
 const Message = () => {
+  const { navigate } = useNavigation();
   return (
-    <View
+    <TouchableOpacity
+      onPress={() => navigate("Chat")}
+      activeOpacity={0.6}
       style={{
         flexDirection: "row",
         alignItems: "center",
@@ -55,7 +59,7 @@ const Message = () => {
           </Text>
         </View>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -72,7 +76,7 @@ const MessagesScreen = () => {
         },
       ]}
     >
-      <Text style={{ fontFamily: "bold", fontSize: 16, marginVertical: 15 }}>
+      <Text style={{ fontFamily: "bold", fontSize: 16, marginVertical: 10 }}>
         Messages
       </Text>
       <View style={{}}>
