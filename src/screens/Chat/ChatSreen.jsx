@@ -1,9 +1,11 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
 import styles from "../../styles";
 import { useNavigation } from "@react-navigation/native";
-import { Ionicons, Feather } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { primary, secondary } from "../../constants/color";
-
+import ChatSection from "../../sections/Home/ChatSection";
+import { Entypo, Feather, FontAwesome5 } from "@expo/vector-icons";
+import ChatInput from "../../sections/Home/ChatInput";
 const ChatScreen = () => {
   const { goBack } = useNavigation();
   return (
@@ -17,7 +19,12 @@ const ChatScreen = () => {
         }}
       >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Ionicons name="arrow-back" size={24} color="black" />
+          <Ionicons
+            name="arrow-back"
+            size={24}
+            color="black"
+            onPress={goBack}
+          />
           <Image
             source={require("../../../assets/images/car.png")}
             style={{
@@ -45,6 +52,7 @@ const ChatScreen = () => {
           justifyContent: "space-between",
           flexDirection: "row",
           alignItems: "center",
+          marginTop: 10,
         }}
       >
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -70,6 +78,9 @@ const ChatScreen = () => {
           N 32,000,000
         </Text>
       </View>
+
+      <ChatSection />
+      <ChatInput />
     </View>
   );
 };
