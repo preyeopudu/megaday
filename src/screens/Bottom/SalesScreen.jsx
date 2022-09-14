@@ -2,6 +2,8 @@ import { View, ScrollView, Image, Text } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import styles from "../../styles/index";
 import AdTop from "../../sections/Ads/AdTop";
+import FormInput from "../../components/forInput";
+import FormButton from "../../components/ForButton";
 
 const Target = ({ title, focus }) => {
   return (
@@ -27,13 +29,21 @@ const Target = ({ title, focus }) => {
 
 const SalesScreen = () => {
   return (
-    <ScrollView style={styles.scrollContainer}>
-      <Text
-        style={{ marginBottom: 15, fontFamily: "circularmedium", fontSize: 13 }}
-      >
-        Post an Ad
-      </Text>
+    <ScrollView
+      style={[styles.scrollContainer, { backgroundColor: "#EDEDED" }]}
+    >
       <AdTop screen={1} />
+      <View
+        style={{
+          backgroundColor: "#fff",
+
+          paddingVertical: 30,
+          marginTop: 40,
+        }}
+      >
+        <FormInput label="Product name" />
+      </View>
+      <FormButton title="Next" style={{ marginTop: 100 }} />
     </ScrollView>
   );
 };

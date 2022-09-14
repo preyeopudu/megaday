@@ -26,11 +26,18 @@ const Target = ({ title, focus }) => {
 
 const AdTop = ({ screen }) => {
   return (
-    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-      <Target title="product" focus={screen >= 1 ? true : false} />
-      <Target title="Image" focus={screen >= 2 ? true : false} />
-      <Target title="Details" focus={screen >= 3 ? true : false} />
-      <Target title="Submit" focus={screen >= 4 ? true : false} />
+    <View>
+      <Text
+        style={{ marginBottom: 15, fontFamily: "circularmedium", fontSize: 13 }}
+      >
+        Post an Ad
+      </Text>
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <Target title="product" focus={screen >= 1 ? true : false} />
+        <Target title="Image" focus={screen >= 2 ? true : false} />
+        <Target title="Details" focus={screen >= 3 ? true : false} />
+        <Target title="Submit" focus={screen >= 4 ? true : false} />
+      </View>
     </View>
   );
 };

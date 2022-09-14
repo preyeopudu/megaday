@@ -21,7 +21,7 @@ const FormInput = ({ label, onChangeText, isSecure, style }) => {
       <View
         style={{
           borderColor: "#BB00DA",
-          borderWidth: isActive == true ? 1.5 : 0.9,
+          borderWidth: isActive == true ? 1.5 : 1,
           marginTop: 10,
           flexDirection: "row",
           justifyContent: "space-between",
