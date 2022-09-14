@@ -17,6 +17,7 @@
     "@react-navigation/stack": "^6.2.3",
     "expo": "~46.0.9",
     "expo-font": "~10.2.0",
+    "expo-image-picker": "~13.3.1",
     "expo-linking": "^3.2.2",
     "expo-splash-screen": "~0.16.1",
     "expo-status-bar": "~1.4.0",
@@ -37,7 +38,7 @@
     "react-redux": "^8.0.2",
     "reanimated-bottom-sheet": "^1.0.0-alpha.22",
     "redux": "^4.2.0",
-    "expo-image-picker": "~13.3.1"
+    "rn-emoji-keyboard": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
