@@ -1,5 +1,5 @@
 import { ScrollView, TextInput, TouchableOpacity, View } from "react-native";
-import { Entypo, Feather, FontAwesome5 } from "@expo/vector-icons";
+
 import { primary, secondary } from "../../constants/color";
 
 const ChatSection = () => {

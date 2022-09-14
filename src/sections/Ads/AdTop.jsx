@@ -1,7 +1,6 @@
 import { View, ScrollView, Image, Text } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import styles from "../../styles/index";
-import AdTop from "../../sections/Ads/AdTop";
 
 const Target = ({ title, focus }) => {
   return (
@@ -19,23 +18,21 @@ const Target = ({ title, focus }) => {
           color: focus ? "#000" : "#A09E9E",
         }}
       >
-        Product
+        {title}
       </Text>
     </View>
   );
 };
 
-const SalesScreen = () => {
+const AdTop = ({ screen }) => {
   return (
-    <ScrollView style={styles.scrollContainer}>
-      <Text
-        style={{ marginBottom: 15, fontFamily: "circularmedium", fontSize: 13 }}
-      >
-        Post an Ad
-      </Text>
-      <AdTop screen={1} />
-    </ScrollView>
+    <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+      <Target title="product" focus={screen >= 1 ? true : false} />
+      <Target title="Image" focus={screen >= 2 ? true : false} />
+      <Target title="Details" focus={screen >= 3 ? true : false} />
+      <Target title="Submit" focus={screen >= 4 ? true : false} />
+    </View>
   );
 };
 
-export default SalesScreen;
+export default AdTop;
