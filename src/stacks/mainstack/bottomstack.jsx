@@ -5,6 +5,7 @@ import SalesScreen from "../../screens/Bottom/SalesScreen";
 import MessagesScreen from "../../screens/Bottom/MessagesScreen";
 import { FontAwesome5, Feather, Ionicons, Octicons } from "@expo/vector-icons";
 import MainStack from "./index";
+import AdStack from "../AdStack";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -41,7 +42,7 @@ const BottomStack = () => {
 
       <Tab.Screen
         name="Sell"
-        component={SalesScreen}
+        component={AdStack}
         options={{
           tabBarLabel: "Sell",
           tabBarIcon: ({ color }) => (

@@ -28,7 +28,12 @@ const AdTop = ({ screen }) => {
   return (
     <View>
       <Text
-        style={{ marginBottom: 15, fontFamily: "circularmedium", fontSize: 13 }}
+        style={{
+          marginTop: 15,
+          marginBottom: 15,
+          fontFamily: "circularmedium",
+          fontSize: 13,
+        }}
       >
         Post an Ad
       </Text>

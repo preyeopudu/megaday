@@ -4,30 +4,9 @@ import styles from "../../styles/index";
 import AdTop from "../../sections/Ads/AdTop";
 import FormInput from "../../components/forInput";
 import FormButton from "../../components/ForButton";
-
-const Target = ({ title, focus }) => {
-  return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <FontAwesome5
-        name="check-circle"
-        size={20}
-        color={focus ? "#05CC31" : "#A09E9E"}
-      />
-      <Text
-        style={{
-          marginLeft: 3,
-          fontFamily: "circularmedium",
-          fontSize: 13,
-          color: focus ? "#000" : "#A09E9E",
-        }}
-      >
-        Product
-      </Text>
-    </View>
-  );
-};
-
+import { useNavigation } from "@react-navigation/native";
 const SalesScreen = () => {
+  const { navigate } = useNavigation();
   return (
     <ScrollView
       style={[styles.scrollContainer, { backgroundColor: "#EDEDED" }]}
@@ -43,7 +22,11 @@ const SalesScreen = () => {
       >
         <FormInput label="Product name" />
       </View>
-      <FormButton title="Next" style={{ marginTop: 100 }} />
+      <FormButton
+        title="Next"
+        onPress={() => navigate("Image")}
+        style={{ marginTop: 100 }}
+      />
     </ScrollView>
   );
 };
