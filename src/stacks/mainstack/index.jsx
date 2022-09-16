@@ -12,7 +12,6 @@ const MainStack = () => {
       <Stack.Screen name="main" component={DashboardScreen} />
       <Stack.Screen name="notification" component={NotificationScreen} />
       <Stack.Screen name="search" component={SearchScreen} />
-      <Stack.Screen name="Image" component={ImagesScreen} />
     </Stack.Navigator>
   );
 };

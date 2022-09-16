@@ -26,7 +26,7 @@ const Target = ({ title, focus }) => {
 
 const AdTop = ({ screen }) => {
   return (
-    <View>
+    <View style={{ paddingVertical: 15 }}>
       <Text
         style={{
           marginTop: 15,
