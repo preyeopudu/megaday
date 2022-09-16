@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from "react-native";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import { secondary } from "../../constants/color";
-const ImageDetails = () => {
+const ImageDetails = ({ size, name }) => {
   return (
     <View
       style={{ backgroundColor: "#fff", paddingHorizontal: 10, marginTop: 10 }}
@@ -33,7 +33,7 @@ const ImageDetails = () => {
                 fontSize: 14,
               }}
             >
-              Image.jpg
+              {name.slice(0, 5)}
             </Text>
             <Text
               style={{
@@ -42,7 +42,7 @@ const ImageDetails = () => {
                 color: secondary,
               }}
             >
-              2mb
+              {parseFloat(size / (1000 * 1024)).toFixed(2)}mb
             </Text>
           </View>
         </View>

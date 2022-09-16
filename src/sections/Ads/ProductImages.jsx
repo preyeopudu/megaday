@@ -1,8 +1,18 @@
-import { View, FlatList, Text } from "react-native";
+import {
+  View,
+  FlatList,
+  Text,
+  TouchableOpacity,
+  useWindowDimensions,
+} from "react-native";
 import { useState } from "react";
 import ProductImage from "../../components/ProductImage";
+import { AntDesign } from "@expo/vector-icons";
+import { secondary } from "../../constants/color";
+import { scale } from "react-native-size-matters";
 
 const ProductImages = () => {
+  const { width } = useWindowDimensions();
   const [images, SetImages] = useState([
     {
       id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
@@ -21,6 +31,7 @@ const ProductImages = () => {
       title: "Third Item",
     },
   ]);
+
   return (
     <View style={{ marginVertical: 20 }}>
       <Text style={{ fontFamily: "circularbold", fontSize: 14 }}>
@@ -36,6 +47,20 @@ const ProductImages = () => {
         keyExtractor={(item) => item}
         renderItem={({ item }) => <ProductImage item={item} />}
         numColumns={4}
+        ListFooterComponent={
+          <TouchableOpacity
+            style={{
+              backgroundColor: secondary,
+              justifyContent: "center",
+              alignItems: "center",
+              margin: 5,
+              width: scale(65),
+              height: scale(65),
+            }}
+          >
+            <AntDesign name="plus" size={24} color="#fff" />
+          </TouchableOpacity>
+        }
       />
     </View>
   );

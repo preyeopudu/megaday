@@ -31,7 +31,7 @@ const AdTop = ({ screen }) => {
         style={{
           marginTop: 15,
           marginBottom: 15,
-          fontFamily: "circularmedium",
+          fontFamily: "circularbold",
           fontSize: 13,
         }}
       >

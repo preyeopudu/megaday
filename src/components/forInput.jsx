@@ -8,16 +8,21 @@ const FormInput = ({ label, onChangeText, isSecure, style }) => {
   const [isActive, SetIsActive] = useState(false);
   const [show, setShow] = useState(false);
   return (
-    <View style={[style]}>
-      <Text
-        style={{
-          fontSize: scale(15),
-          fontFamily: "circular",
-          color: isActive == true ? "#BB00DA" : "#8B8B8B",
-        }}
-      >
-        {label}
-      </Text>
+    <View style={[{ marginVertical: 10 }, style]}>
+      {label ? (
+        <Text
+          style={{
+            fontSize: scale(15),
+            fontFamily: "circular",
+            color: isActive == true ? "#BB00DA" : "#8B8B8B",
+          }}
+        >
+          {label}
+        </Text>
+      ) : (
+        <></>
+      )}
+
       <View
         style={{
           borderColor: "#BB00DA",
