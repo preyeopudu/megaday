@@ -4,8 +4,13 @@ import { AntDesign } from "@expo/vector-icons";
 import FormButton from "../../components/ForButton";
 import { useNavigation } from "@react-navigation/native";
 
-const SuccessSection = () => {
+const SuccessSection = ({ Close }) => {
   const { navigate } = useNavigation();
+
+  const Goback = () => {
+    Close();
+    navigate("Sales");
+  };
   return (
     <View
       style={{
@@ -59,7 +64,7 @@ const SuccessSection = () => {
         <FormButton
           title="Go home"
           style={{ marginTop: 40, width: "100%" }}
-          onPress={() => navigate("main")}
+          onPress={() => Goback()}
         />
       </View>
     </View>

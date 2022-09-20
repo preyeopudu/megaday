@@ -133,7 +133,7 @@ const SubmitScreen = () => {
           index={1}
           snapPoints={snapPoints}
         >
-          <SuccessSection />
+          <SuccessSection Close={Close} />
         </BottomSheetModal>
       </ScrollView>
     </View>

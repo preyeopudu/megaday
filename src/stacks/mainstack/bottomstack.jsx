@@ -6,6 +6,7 @@ import MessagesScreen from "../../screens/Bottom/MessagesScreen";
 import { FontAwesome5, Feather, Ionicons, Octicons } from "@expo/vector-icons";
 import MainStack from "./index";
 import AdStack from "../AdStack";
+import ProfileScreen from "../../screens/Bottom/ProfileScreen";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -68,7 +69,7 @@ const BottomStack = () => {
 
       <Tab.Screen
         name="You"
-        component={FavouriteScreen}
+        component={ProfileScreen}
         options={{
           tabBarLabel: "You",
           tabBarIcon: ({ color }) => (

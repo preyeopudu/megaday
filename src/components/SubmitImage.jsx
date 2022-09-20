@@ -25,7 +25,7 @@ const SubmitImage = () => {
       </View>
       <View>
         <Text
-          ellipsizeMode="tail"
+          ellipsizeMode="tail b"
           numberOfLines={1}
           style={{
             fontSize: 15,

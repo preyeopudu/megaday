@@ -8,7 +8,10 @@ const Stack = createNativeStackNavigator();
 
 const AdStack = () => {
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{ headerShown: false }}
+      initialRouteName="Sales"
+    >
       <Stack.Screen name="Sales" component={SalesScreen} />
       <Stack.Screen name="Image" component={ImagesScreen} />
       <Stack.Screen name="AdDetails" component={AdDetailsScreen} />
