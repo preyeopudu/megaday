@@ -3,9 +3,12 @@ import { ScrollView } from "react-native-virtualized-view";
 import AdTop from "../../sections/Ads/AdTop";
 import styles from "../../styles";
 import SubmitImage from "../../components/SubmitImage";
-
+import { useRef, useMemo, useCallback } from "react";
 import { primary, secondary } from "../../constants/color";
 import FormButton from "../../components/ForButton";
+import { BottomSheetModal, BottomSheetScrollView } from "@gorhom/bottom-sheet";
+import CustomBackdrop from "../../components/Backdrop";
+import SuccessSection from "../../sections/Ads/Success";
 
 const imagelist = [
   {
@@ -44,6 +47,15 @@ const Details = ({ title, body }) => {
 };
 
 const SubmitScreen = () => {
+  const bottomSheetModalRef = useRef(null);
+  const snapPoints = useMemo(() => ["75%", "75%"], []);
+
+  const Close = () => {
+    bottomSheetModalRef.current?.close();
+  };
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
   return (
     <View style={[styles.container, { backgroundColor: "#EDEDED" }]}>
       <AdTop screen={4} />
@@ -109,7 +121,20 @@ const SubmitScreen = () => {
           <Details title="Price" body={"N500,000"} />
         </View>
 
-        <FormButton title="Submit" style={{ marginBottom: 40 }} />
+        <FormButton
+          title="Submit"
+          style={{ marginBottom: 40 }}
+          onPress={handlePresentModalPress}
+        />
+        <BottomSheetModal
+          enableHandlePanningGesture={false}
+          backdropComponent={CustomBackdrop}
+          ref={bottomSheetModalRef}
+          index={1}
+          snapPoints={snapPoints}
+        >
+          <SuccessSection />
+        </BottomSheetModal>
       </ScrollView>
     </View>
   );

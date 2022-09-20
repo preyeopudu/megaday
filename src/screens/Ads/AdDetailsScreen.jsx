@@ -9,6 +9,7 @@ import { useNavigation } from "@react-navigation/native";
 
 const AdDetailsScreen = () => {
   const { navigate } = useNavigation();
+
   return (
     <View style={[styles.container, { backgroundColor: "#EDEDED" }]}>
       <AdTop screen={3} />

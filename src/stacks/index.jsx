@@ -11,11 +11,11 @@ const IndexStack = () => {
   const { Auth } = useSelector((state) => state);
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <BottomSheetModalProvider>
-        <NavigationContainer>
+      <NavigationContainer>
+        <BottomSheetModalProvider>
           {Auth == false ? <AuthStack /> : <BottomlessStack />}
-        </NavigationContainer>
-      </BottomSheetModalProvider>
+        </BottomSheetModalProvider>
+      </NavigationContainer>
     </GestureHandlerRootView>
   );
 };
