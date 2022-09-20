@@ -4,7 +4,12 @@ import { secondary } from "../../constants/color";
 const ImageDetails = ({ size, name }) => {
   return (
     <View
-      style={{ backgroundColor: "#fff", paddingHorizontal: 10, marginTop: 10 }}
+      style={{
+        backgroundColor: "#fff",
+        paddingHorizontal: 10,
+        marginTop: 10,
+        flex: 1,
+      }}
     >
       <View
         style={{
