@@ -1,7 +1,7 @@
 import { ScrollView, Text, TouchableOpacity } from "react-native";
 import { secondary } from "../constants/color";
 import { useState } from "react";
-
+import { Feather } from "@expo/vector-icons";
 const AdvertTabs = () => {
   const [selected, setSelected] = useState(null);
 
@@ -20,13 +20,20 @@ const AdvertTabs = () => {
           height: 40,
           justifyContent: "center",
           alignItems: "center",
+          justifyContent: "center",
         }}
       >
+        <Feather
+          name="shield"
+          size={20}
+          color={selected == title ? "#fff" : secondary}
+        />
         <Text
           style={{
             fontFamily: "circularbold",
             color: selected == title ? "#fff" : secondary,
             fontSize: 10,
+            marginHorizontal: 3,
           }}
         >
           {title}
