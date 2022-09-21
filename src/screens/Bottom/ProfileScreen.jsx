@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import { View, Image, Text, TouchableOpacity } from "react-native";
 import { ScrollView } from "react-native-virtualized-view";
 import FormButton from "../../components/ForButton";
@@ -5,6 +6,7 @@ import { primary, secondary } from "../../constants/color";
 import styles from "../../styles/index";
 
 const ProfileButton = ({ title }) => {
+  const { navigate } = useNavigation();
   return (
     <TouchableOpacity
       style={{
@@ -13,6 +15,7 @@ const ProfileButton = ({ title }) => {
         paddingHorizontal: 20,
         marginVertical: 10,
       }}
+      onPress={() => navigate(title)}
     >
       <Text style={{ fontFamily: "bold", fontSize: 15 }}>{title}</Text>
     </TouchableOpacity>
@@ -47,7 +50,7 @@ const ProfileScreen = () => {
       <ScrollView showsVerticalScrollIndicator={false}>
         <ProfileButton title={"My Adverts"} />
         <ProfileButton title={"Performance"} />
-        <ProfileButton title={"Megadey plans"} />
+        <ProfileButton title={"Megaday plans"} />
         <ProfileButton title={"Feedback"} />
 
         <TouchableOpacity
@@ -106,8 +109,9 @@ const ProfileScreen = () => {
             height: 60,
             justifyContent: "center",
             alignItems: "center",
-            alignSelf: "flex-end",
-            marginBottom: 10,
+            position: "absolute",
+            bottom: 100,
+            right: 0,
           }}
         >
           <Image source={require("../../../assets/images/support.png")} />

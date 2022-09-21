@@ -7,6 +7,7 @@ import { FontAwesome5, Feather, Ionicons, Octicons } from "@expo/vector-icons";
 import MainStack from "./index";
 import AdStack from "../AdStack";
 import ProfileScreen from "../../screens/Bottom/ProfileScreen";
+import ProfileStack from "../ProfileStack";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -69,7 +70,7 @@ const BottomStack = () => {
 
       <Tab.Screen
         name="You"
-        component={ProfileScreen}
+        component={ProfileStack}
         options={{
           tabBarLabel: "You",
           tabBarIcon: ({ color }) => (
