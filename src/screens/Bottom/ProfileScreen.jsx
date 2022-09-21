@@ -11,7 +11,7 @@ const ProfileButton = ({ title }) => {
     <TouchableOpacity
       style={{
         backgroundColor: "#fff",
-        paddingVertical: 10,
+        paddingVertical: 15,
         paddingHorizontal: 20,
         marginVertical: 10,
       }}
