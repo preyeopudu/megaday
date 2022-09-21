@@ -2,6 +2,7 @@ import { ScrollView, View, Image, Text, TouchableOpacity } from "react-native";
 import Header from "../../components/Header";
 import styles from "../../styles";
 import { secondary } from "../../constants/color";
+import AdvertTabs from "../../components/AdvertTab";
 
 const Ads = () => {
   return (
@@ -48,10 +49,12 @@ const Ads = () => {
 
 const AdvertScreen = () => {
   return (
-    <View style={[styles.container, { backgroundColor: "EDEDED" }]}>
+    <View style={[styles.scrollContainer, { backgroundColor: "EDEDED" }]}>
       <Header title={"My Adverts"} />
-
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <View style={{ marginVertical: 15 }}>
+        <AdvertTabs />
+      </View>
+      <ScrollView showsVerticalScrollIndicator={false} style={{}}>
         <Ads />
         <Ads />
       </ScrollView>
