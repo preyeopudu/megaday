@@ -3,7 +3,7 @@ import { secondary } from "../constants/color";
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
 const AdvertTabs = () => {
-  const [selected, setSelected] = useState(null);
+  const [selected, setSelected] = useState("Active");
 
   const Advert = ({ title }) => {
     const Action = () => {

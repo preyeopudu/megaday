@@ -121,7 +121,7 @@ const GraphSection = () => {
         }}
         style={{
           marginVertical: 8,
-          backgroundColor: "red",
+
           alignSelf: "center",
         }}
       />
