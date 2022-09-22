@@ -52,11 +52,16 @@ const GraphSection = () => {
           }}
         >
           <Text
-            style={{ color: "#fff", fontFamily: "circularbold", fontSize: 8 }}
+            style={{
+              color: "#fff",
+              fontFamily: "circularbold",
+              fontSize: 8,
+              marginHorizontal: 2,
+            }}
           >
             Today
           </Text>
-          <AntDesign name="down" size={12} color="#fff" />
+          <AntDesign name="down" size={10} color="#fff" />
         </TouchableOpacity>
       </View>
       <LineChart
