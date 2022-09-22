@@ -3,28 +3,42 @@ import { AntDesign } from "@expo/vector-icons";
 import { secondary } from "../../constants/color";
 
 const list = [
-  { title: "Spotlight visibility" },
-  { title: "Spotlight on Categories" },
-  { title: "Social media/Webiste Link inclusion" },
-  { title: "Spotlight auto review" },
-  { title: "Number of items to be promoted" },
-  { title: "Social media / Email promotions" },
+  { price: "1000", date: "1 week" },
+  { price: "100000", date: "1 month" },
 ];
 
 const Info = () => {
   return (
-    <View style={{ flexDirection: "row", alignItems: "center" }}>
-      <AntDesign name="checkcircle" size={24} color={secondary} />
+    <View
+      style={{
+        alignItems: "center",
+        borderColor: secondary,
+        borderWidth: 3,
+        padding: 10,
+        marginVertical: 10,
+      }}
+    >
+      <Text
+        style={{ fontSize: 20, fontFamily: "circularbold", color: secondary }}
+      >
+        N 11,500.00
+      </Text>
+      <Text
+        style={{ fontSize: 15, fontFamily: "circularmedium", color: secondary }}
+      >
+        1 Month
+      </Text>
     </View>
   );
 };
 
-const JumboSection = () => {
+const JumboDates = () => {
   return (
-    <View>
+    <View style={{ marginVertical: 20 }}>
+      <Info />
       <Info />
     </View>
   );
 };
 
-export default JumboSection;
+export default JumboDates;
