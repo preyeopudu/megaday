@@ -4,6 +4,10 @@ import { ScrollView } from "react-native-virtualized-view";
 import FormButton from "../../components/ForButton";
 import { primary, secondary } from "../../constants/color";
 import styles from "../../styles/index";
+import { useRef, useMemo, useCallback } from "react";
+import { BottomSheetModal, BottomSheetScrollView } from "@gorhom/bottom-sheet";
+import CustomBackdrop from "../../components/Backdrop";
+import FeedBackSection from "../../sections/feedback/FeedbackSection";
 
 const ProfileButton = ({ title }) => {
   const { navigate } = useNavigation();
@@ -23,6 +27,12 @@ const ProfileButton = ({ title }) => {
 };
 
 const ProfileScreen = () => {
+  const { navigate } = useNavigation();
+  const bottomSheetModalRef = useRef(null);
+  const snapPoints = useMemo(() => ["75%", "80%"], []);
+  const handlePresentModalPress = useCallback(() => {
+    bottomSheetModalRef.current?.present();
+  }, []);
   return (
     <View style={[styles.scrollContainer, { backgroundColor: "#F6F6F6" }]}>
       <View
@@ -42,7 +52,7 @@ const ProfileScreen = () => {
             Sarah Ayo
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigate("Setting")}>
           <Image source={require("../../../assets/images/setting.png")} />
         </TouchableOpacity>
       </View>
@@ -51,7 +61,17 @@ const ProfileScreen = () => {
         <ProfileButton title={"My Adverts"} />
         <ProfileButton title={"Performance"} />
         <ProfileButton title={"Megaday plans"} />
-        <ProfileButton title={"Feedback"} />
+        <TouchableOpacity
+          onPress={handlePresentModalPress}
+          style={{
+            backgroundColor: "#fff",
+            paddingVertical: 15,
+            paddingHorizontal: 20,
+            marginVertical: 10,
+          }}
+        >
+          <Text style={{ fontFamily: "bold", fontSize: 15 }}>Feedback</Text>
+        </TouchableOpacity>
 
         <TouchableOpacity
           style={{
@@ -118,6 +138,16 @@ const ProfileScreen = () => {
         </TouchableOpacity>
         <FormButton title={"Sign Out"} style={{ marginBottom: 20 }} />
       </ScrollView>
+      <BottomSheetModal
+        backdropComponent={CustomBackdrop}
+        ref={bottomSheetModalRef}
+        index={1}
+        snapPoints={snapPoints}
+      >
+        <BottomSheetScrollView>
+          <FeedBackSection />
+        </BottomSheetScrollView>
+      </BottomSheetModal>
     </View>
   );
 };
