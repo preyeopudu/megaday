@@ -2,7 +2,6 @@ import { View, Text } from "react-native";
 import { primary, secondary } from "../../constants/color";
 
 const Analysis = ({ color, title }) => {
-  console.log(color);
   return (
     <View
       style={{

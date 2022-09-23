@@ -5,8 +5,10 @@ import styles from "../../styles";
 import { ScrollView } from "react-native-virtualized-view";
 import JumboDates from "../../sections/Deals/JumboDates";
 import FormButton from "../../components/ForButton";
+import { useNavigation } from "@react-navigation/native";
 const DealScreen = ({ route }) => {
   const { title } = route.params;
+  const { navigate } = useNavigation();
   return (
     <ScrollView
       style={[styles.scrollContainer, { backgroundColor: "#EDEDED" }]}
@@ -25,7 +27,10 @@ const DealScreen = ({ route }) => {
       <JumboSection />
       <JumboDates />
 
-      <FormButton title={"Proceed tp payment"} />
+      <FormButton
+        title={"Proceed to payment"}
+        onPress={() => navigate("payment")}
+      />
     </ScrollView>
   );
 };
